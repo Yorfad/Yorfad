@@ -5,7 +5,6 @@ export const Footer = () => {
             <p className="text-sm text-gray-400">© {new Date().getFullYear()} Yair Morales. Desarrollador Web.</p>
             <div className="flex space-x-4 mt-4 md:mt-0">
                 <a href="#" className="text-gray-400 hover:text-white dark:hover:text-blue-400 transition-colors">GitHub</a>
-                <a href="#" className="text-gray-400 hover:text-white dark:hover:text-blue-400 transition-colors">LinkedIn</a>
             </div>
         </div>
     </footer>
