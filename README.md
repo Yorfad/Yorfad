@@ -1,73 +1,53 @@
-# React + TypeScript + Vite
+# Portafolio Profesional - Yair Morales 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+¡Bienvenido a mi portafolio profesional! Este proyecto es una vitrina responsiva, minimalista y moderna que muestra mis habilidades técnicas como desarrollador Front-end y Full-Stack. Construido utilizando **React**, **TypeScript** y **Tailwind CSS**, este sitio sirve como índice central para mis casos de estudio y proyectos de software principales.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🌟 Proyectos Destacados
 
-## React Compiler
+### 1. Carrito de Compras E-Commerce (VerdeMente Boutique)
+Una boutique gourmet orgánica diseñada con arquitectura desacoplada y base de datos PostgreSQL en la nube.
+- **Frontend**: React (Vite) + TypeScript + Tailwind CSS v4 + Context API (manejo de estado local sincronizado).
+- **Backend**: REST API construida con Node.js, Express y PostgreSQL (hospedada en Railway).
+- **Base de Datos**: PostgreSQL remota (hospedada en Supabase con conexión mediante Pooler de Supavisor).
+- **Seguridad**: Autenticación segura usando JSON Web Tokens (JWT) y cifrado de contraseñas con bcryptjs.
+- **🚀 Producción**: [Visitar Tienda](https://carrito-de-compras-murex.vercel.app/)
+- **📂 Repositorio**: [Código del Carrito de Compras](https://github.com/Yorfad/carritoDeCompras)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 2. Simulador de Autómatas (DFA con Grafos)
+Una herramienta interactiva paso a paso para la emulación y prueba de Autómatas Finitos Deterministas (AFD) y gramáticas formales.
+- **Tecnologías**: JavaScript ES6 (Programación Orientada a Objetos), Cytoscape.js (para la renderización y animación interactiva de grafos), SASS y manipulación nativa del DOM.
+- **Características**: Permite la carga de autómatas mediante archivos `.txt`, validación de palabras en tiempo real con resaltado visual del recorrido por los estados.
+- **🚀 Producción**: [Visitar Simulador](https://yorfad.github.io/automatasProyecto.github.io/)
+- **📂 Repositorio**: [Código del Simulador](https://github.com/Yorfad/automatasProyecto.github.io)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Tecnologías del Portafolio
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+El portafolio principal utiliza el siguiente stack tecnológico:
+- **React 18** (para la estructura modular y reactiva)
+- **TypeScript** (tipado estático y robustez del código)
+- **Tailwind CSS** (para un diseño premium, fluido, animaciones cuidadas y soporte nativo de Modo Oscuro)
+- **React Icons & React Router DOM** (navegación fluida de una sola página y consistencia visual)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 💻 Desarrollo Local
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Para correr el portafolio en tu máquina de desarrollo:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1. Clona este repositorio:
+   ```bash
+   git clone https://github.com/Yorfad/Yorfad.github.io.git
+   ```
+2. Entra en el directorio e instala las dependencias:
+   ```bash
+   npm install
+   ```
+3. Inicia el servidor de desarrollo local:
+   ```bash
+   npm run dev
+   ```
+4. Abre [http://localhost:5173](http://localhost:5173) en tu navegador.

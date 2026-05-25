@@ -7,26 +7,27 @@ export const ProjectDetail = () => {
   const projectMocks: Record<string, any> = {
     'carritoDeCompras': {
       title: 'Carrito de Compras E-Commerce',
-      type: 'Aplicación Web Interactiva',
-      description: 'Este proyecto consistió en construir la lógica fundamental de una tienda en línea utilizando tecnologías web nativas (Vanilla JS). El mayor reto fue manejar el estado global del carrito simulando una respuesta de base de datos a través de peticiones asíncronas hacia archivos JSON, y garantizar que la información persistiera entre recargas de la página.',
-      images: ['/imagenCarrito.jpeg'],
-      techStack: ['HTML5', 'CSS Metodología BEM', 'SASS', 'ES6 JavaScript Modules', 'LocalStorage API'],
-      liveUrl: '/carritoDeCompras/carritoDeCompras.html',
-      repoUrl: 'https://github.com/Yorfad/Yorfad.github.io', 
+      type: 'Aplicación Full-Stack Web',
+      description: 'Este proyecto es una boutique orgánica de comercio electrónico ("VerdeMente Boutique") construida de forma desacoplada. Cuenta con un catálogo interactivo con filtros, buscador en tiempo real y persistencia de estado local. Soporta el registro e inicio de sesión seguro de usuarios mediante JWT y la consulta de un historial de compras guardado permanentemente en PostgreSQL.',
+      images: ['/imagenCarrito.png'],
+      techStack: ['React', 'TypeScript', 'Tailwind CSS v4', 'Node.js Express API', 'PostgreSQL (Supabase)', 'JWT / LocalStorage API', 'Railway / Vercel'],
+      liveUrl: 'https://carrito-de-compras-murex.vercel.app/',
+      repoUrl: 'https://github.com/Yorfad/carrito-react-app', 
       features: [
-        'Sistema de Login simulado',
-        'Listado dinámico de productos y manipulación del DOM',
-        'Cálculo de impuestos y totales del carrito en tiempo real',
-        'Diseño 100% responsivo'
+        'Registro e inicio de sesión de usuarios seguro (JWT)',
+        'Catálogo dinámico con sincronización de inventario en tiempo real',
+        'Historial de pedidos consultable para usuarios autenticados',
+        'Manejo seguro de compras usando transacciones de base de datos para evitar discrepancias de stock',
+        'Diseño fluido responsivo y soporte nativo para Modo Oscuro'
       ]
     },
     'automatas': {
       title: 'Simulador de Autómatas (DFA) con Grafos',
       type: 'Algoritmos y Estructura de Datos',
       description: 'Una simulación interactiva paso a paso de Autómatas Finitos Deterministas (AFD) implementada completamente en Vanilla JS. Utiliza algoritmos de recorrido de grafos interactivos, renderizados dinámicamente con Cytoscape.js para visualizar cómo los estados procesan cadenas de caracteres en tiempo real.',
-      images: ['/automatas/logo.png'],
+      images: ['/logo-automatas.png'],
       techStack: ['JavaScript (Logica DFA Orientada a Objetos)', 'Teoría de Computación', 'Cytoscape.js (Grafos)', 'SASS', 'Manejo del DOM'],
-      liveUrl: '/automatas/index.html',
+      liveUrl: 'https://yorfad.github.io/automatasProyecto.github.io/',
       repoUrl: 'https://github.com/Yorfad/automatasProyecto.github.io', 
       features: [
         'Clase State personalizada para emular conexiones de grafos',

@@ -123,7 +123,7 @@ export const Home = () => {
                 <div className="absolute inset-0 bg-indigo-900 bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-500 z-10 flex items-center justify-center">
                     <span className="text-white font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform translate-y-4 group-hover:translate-y-0">Ver Proyecto completo</span>
                 </div>
-                <img src="/automatas/logo.png" alt="Simulador Automatas" className="w-48 h-48 object-contain group-hover:scale-110 transition-transform duration-700 ease-in-out dark:brightness-110" />
+                <img src="/logo-automatas.png" alt="Simulador Automatas" className="w-48 h-48 object-contain group-hover:scale-110 transition-transform duration-700 ease-in-out dark:brightness-110" />
               </div>
               <div className="p-8">
                 <div className="flex justify-between items-center mb-4">
@@ -146,18 +146,19 @@ export const Home = () => {
                 <div className="absolute inset-0 bg-blue-900 bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-500 z-10 flex items-center justify-center">
                     <span className="text-white font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform translate-y-4 group-hover:translate-y-0">Ver Proyecto completo</span>
                 </div>
-                <img src="/imagenCarrito.jpeg" alt="Carrito de Compras" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out dark:opacity-80" />
+                <img src="/imagenCarrito.png" alt="Carrito de Compras" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out dark:opacity-80" />
               </div>
               <div className="p-8">
                 <div className="flex justify-between items-center mb-4">
                   <h3 className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">Carrito de Compras</h3>
                 </div>
-                <div className="flex gap-2 mb-4">
-                    <span className="bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs px-3 py-1.5 rounded-md font-bold uppercase tracking-wide">Vainilla JS</span>
-                    <span className="bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 text-xs px-3 py-1.5 rounded-md font-bold uppercase tracking-wide">SASS</span>
+                <div className="flex flex-wrap gap-2 mb-4">
+                    <span className="bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs px-3 py-1.5 rounded-md font-bold uppercase tracking-wide">Full-Stack</span>
+                    <span className="bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 text-xs px-3 py-1.5 rounded-md font-bold uppercase tracking-wide">React</span>
+                    <span className="bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-xs px-3 py-1.5 rounded-md font-bold uppercase tracking-wide">PostgreSQL</span>
                 </div>
                 <p className="text-gray-600 dark:text-gray-400 text-base leading-relaxed line-clamp-3">
-                  E-commerce simulado con consumo asíncrono, persistencia de estado local y autenticación básica.
+                  Boutique orgánica interactiva con catálogo en tiempo real, autenticación de usuarios por JWT y persistencia en base de datos PostgreSQL.
                 </p>
               </div>
             </Link>

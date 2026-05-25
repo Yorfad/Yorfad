@@ -16,14 +16,17 @@ export const Header = () => {
         <nav className="hidden md:flex space-x-8 items-center">
           <Link to="/" className="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 font-semibold transition-colors duration-200">Inicio</Link>
           <a href="/#proyectos" className="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 font-semibold transition-colors duration-200">Proyectos</a>
+          
           <button onClick={toggleTheme} className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-xl p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800">
             {theme === 'dark' ? <FaSun /> : <FaMoon />}
           </button>
         </nav>
+        
         <div className="md:hidden flex items-center space-x-4">
           <button onClick={toggleTheme} className="text-gray-600 dark:text-gray-300 text-xl p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800">
             {theme === 'dark' ? <FaSun /> : <FaMoon />}
           </button>
+          
           <button 
             className="text-2xl text-gray-800 dark:text-gray-200 focus:outline-none" 
             onClick={() => setIsOpen(!isOpen)}
@@ -41,3 +44,4 @@ export const Header = () => {
     </header>
   );
 };
+
