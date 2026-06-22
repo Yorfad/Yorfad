@@ -123,7 +123,7 @@ export const Home = () => {
                 <div className="absolute inset-0 bg-indigo-900 bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-500 z-10 flex items-center justify-center">
                     <span className="text-white font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform translate-y-4 group-hover:translate-y-0">Ver Proyecto completo</span>
                 </div>
-                <img src="/logo-automatas.png" alt="Simulador Automatas" className="w-48 h-48 object-contain group-hover:scale-110 transition-transform duration-700 ease-in-out dark:brightness-110" />
+                <img src="/logo-automatas.svg" alt="Simulador Automatas" className="w-48 h-48 object-contain group-hover:scale-110 transition-transform duration-700 ease-in-out dark:brightness-110" />
               </div>
               <div className="p-8">
                 <div className="flex justify-between items-center mb-4">
@@ -146,7 +146,7 @@ export const Home = () => {
                 <div className="absolute inset-0 bg-blue-900 bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-500 z-10 flex items-center justify-center">
                     <span className="text-white font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform translate-y-4 group-hover:translate-y-0">Ver Proyecto completo</span>
                 </div>
-                <img src="/imagenCarrito.png" alt="Carrito de Compras" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out dark:opacity-80" />
+                <img src="/imagenCarrito.svg" alt="Carrito de Compras" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out dark:opacity-80" />
               </div>
               <div className="p-8">
                 <div className="flex justify-between items-center mb-4">
@@ -163,6 +163,90 @@ export const Home = () => {
               </div>
             </Link>
 
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contacto" className="py-24 px-4 bg-gray-50 dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800 transition-colors">
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-extrabold text-gray-900 dark:text-white mb-4 tracking-tight">Contacto</h2>
+            <div className="w-16 h-1 bg-blue-600 mx-auto rounded-full"></div>
+            <p className="text-gray-500 dark:text-gray-400 mt-6 max-w-2xl mx-auto text-lg">
+              ¿Tienes algún proyecto en mente o quieres charlar? ¡Escríbeme!
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-10 items-stretch">
+            {/* Contact Info */}
+            <div className="md:col-span-2 space-y-6 flex flex-col justify-between">
+              <div className="bg-white dark:bg-gray-800 p-8 rounded-3xl border border-gray-100 dark:border-gray-700 shadow-sm space-y-6">
+                <div>
+                  <h3 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-1">Correo Electrónico</h3>
+                  <a href="mailto:alexmej267@gmail.com" className="text-lg font-bold text-blue-600 dark:text-blue-400 hover:underline break-all">
+                    alexmej267@gmail.com
+                  </a>
+                </div>
+                <div>
+                  <h3 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-1">Ubicación</h3>
+                  <p className="text-lg font-bold text-gray-850 dark:text-gray-200">Guatemala</p>
+                </div>
+                <div>
+                  <h3 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-1">Redes</h3>
+                  <a href="https://github.com/Yorfad" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-lg font-bold text-gray-850 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                    <FaGithub /> GitHub
+                  </a>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-blue-600 to-indigo-950 text-white p-8 rounded-3xl shadow-lg space-y-3 hidden md:block">
+                <h4 className="font-extrabold text-xl">¿Hacemos algo increíble?</h4>
+                <p className="text-blue-100 text-sm leading-relaxed">
+                  Estoy disponible para proyectos freelance, colaboraciones o posiciones a tiempo completo.
+                </p>
+              </div>
+            </div>
+
+            {/* Contact Form Mock */}
+            <form onSubmit={(e) => e.preventDefault()} className="md:col-span-3 bg-white dark:bg-gray-800 p-8 rounded-3xl border border-gray-100 dark:border-gray-700 shadow-sm space-y-6">
+              <div className="space-y-2">
+                <label className="text-sm font-bold text-gray-700 dark:text-gray-300">Nombre Completo</label>
+                <input 
+                  type="text" 
+                  placeholder="Tu nombre" 
+                  required
+                  className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-white border border-gray-200 dark:border-gray-700 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <label className="text-sm font-bold text-gray-700 dark:text-gray-300">Correo Electrónico</label>
+                <input 
+                  type="email" 
+                  placeholder="tu@correo.com" 
+                  required
+                  className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-white border border-gray-200 dark:border-gray-700 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <label className="text-sm font-bold text-gray-700 dark:text-gray-300">Mensaje</label>
+                <textarea 
+                  rows={4}
+                  placeholder="Cuéntame sobre tu proyecto..." 
+                  required
+                  className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-white border border-gray-200 dark:border-gray-700 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition resize-none"
+                ></textarea>
+              </div>
+
+              <button 
+                type="submit" 
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-2xl transition shadow-lg shadow-blue-500/10 active:scale-[0.98]"
+              >
+                Enviar Mensaje
+              </button>
+            </form>
           </div>
         </div>
       </section>

@@ -16,6 +16,7 @@ export const Header = () => {
         <nav className="hidden md:flex space-x-8 items-center">
           <Link to="/" className="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 font-semibold transition-colors duration-200">Inicio</Link>
           <a href="/#proyectos" className="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 font-semibold transition-colors duration-200">Proyectos</a>
+          <a href="/#contacto" className="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 font-semibold transition-colors duration-200">Contacto</a>
           
           <button onClick={toggleTheme} className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-xl p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800">
             {theme === 'dark' ? <FaSun /> : <FaMoon />}
@@ -40,6 +41,7 @@ export const Header = () => {
       <div className={`md:hidden bg-white dark:bg-gray-900 shadow-lg absolute top-full left-0 w-full flex flex-col items-center py-6 space-y-6 transition-all duration-300 ease-in-out origin-top ${isOpen ? 'scale-y-100 opacity-100' : 'scale-y-0 opacity-0 h-0 overflow-hidden py-0'}`}>
         <Link to="/" onClick={() => setIsOpen(false)} className="text-gray-800 dark:text-gray-200 hover:text-blue-600 font-bold text-xl">Inicio</Link>
         <a href="/#proyectos" onClick={() => setIsOpen(false)} className="text-gray-800 dark:text-gray-200 hover:text-blue-600 font-bold text-xl">Proyectos</a>
+        <a href="/#contacto" onClick={() => setIsOpen(false)} className="text-gray-800 dark:text-gray-200 hover:text-blue-600 font-bold text-xl">Contacto</a>
       </div>
     </header>
   );
