@@ -22,6 +22,13 @@ Una herramienta interactiva paso a paso para la emulación y prueba de Autómata
 - **🚀 Producción**: [Visitar Simulador](https://yorfad.github.io/automatasProyecto.github.io/)
 - **📂 Repositorio**: [Código del Simulador](https://github.com/Yorfad/automatasProyecto.github.io)
 
+### 3. Simulador de Regresión Lineal
+Una aplicación educativa interactiva para aprender Regresión Lineal Simple visualizando paso a paso el algoritmo de Descenso de Gradiente.
+- **Tecnologías**: React + TypeScript + Tailwind CSS v4, Recharts y Canvas (gráficas), KaTeX (fórmulas), Framer Motion y Google Gemini API (asistente de IA).
+- **Características**: Simulación iteración por iteración con panel matemático (MSE, gradientes, regla de actualización), teoría con casos reales, simulador de gran escala con miles de datos y chatbot de IA integrado.
+- **🚀 Producción**: [Visitar Simulador](https://regresion-lineal.vercel.app/)
+- **📂 Repositorio**: [Código del Simulador](https://github.com/Yorfad/RegresionLineal)
+
 ---
 
 ## 🛠️ Tecnologías del Portafolio

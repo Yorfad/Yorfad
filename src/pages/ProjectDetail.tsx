@@ -35,6 +35,23 @@ export const ProjectDetail = () => {
         'Carga y parsing de gramáticas / AFD desde archivos de configuración de texto plano (.txt)',
         'Renderizado visual de grafos complejos sin requerir frameworks reactivos o canvas'
       ]
+    },
+    'regresionLineal': {
+      title: 'Simulador de Regresión Lineal',
+      type: 'Machine Learning Educativo',
+      description: 'Una aplicación web interactiva para aprender Regresión Lineal Simple visualizando, iteración por iteración, cómo el algoritmo de Descenso de Gradiente ajusta la recta a los datos. Incluye teoría con casos históricos reales, un simulador de gran escala con miles de datos y un asistente de IA que responde dudas en contexto.',
+      challenge: 'Explicar un algoritmo matemático de forma visual exige que cada paso del cálculo (costo MSE, gradientes y actualización de parámetros) sea transparente y reproducible, sin perder rendimiento al trabajar con miles de puntos en el navegador.',
+      images: ['/logo-regresion.svg'],
+      techStack: ['React', 'TypeScript', 'Tailwind CSS v4', 'Recharts / Canvas', 'KaTeX (fórmulas)', 'Framer Motion', 'Google Gemini API', 'Vercel / Docker'],
+      liveUrl: 'https://regresion-lineal.vercel.app/',
+      repoUrl: 'https://github.com/Yorfad/RegresionLineal',
+      features: [
+        'Simulación paso a paso del Descenso de Gradiente con la recta ajustándose en tiempo real',
+        'Panel matemático que muestra la función de costo MSE, las derivadas parciales y la regla de actualización',
+        'Sección de teoría con fórmulas renderizadas en LaTeX y casos históricos reales',
+        'Simulador de gran escala que procesa miles de datos renderizados en Canvas',
+        'Chatbot con IA (Gemini) integrado para resolver dudas sobre el algoritmo'
+      ]
     }
   };
 
@@ -99,7 +116,7 @@ export const ProjectDetail = () => {
                 <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white mb-6">El Reto</h2>
                 <div className="w-12 h-1 bg-blue-600 mb-8 rounded-full"></div>
                 <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-10">
-                    Construir una simulación escalable en el entorno del navegador suele requerir librerías complejas. Manipular el DOM o grafos sin frameworks re-renderizables (como React) en este nivel presenta requerimientos manuales estrictos para evitar fugas de memoria y des-sincronizaciones de UI.
+                    {project.challenge ?? <>Construir una simulación escalable en el entorno del navegador suele requerir librerías complejas. Manipular el DOM o grafos sin frameworks re-renderizables (como React) en este nivel presenta requerimientos manuales estrictos para evitar fugas de memoria y des-sincronizaciones de UI.</>}
                 </p>
 
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Características Destacadas</h3>

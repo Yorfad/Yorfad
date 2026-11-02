@@ -163,6 +163,29 @@ export const Home = () => {
               </div>
             </Link>
 
+            {/* Regresion Lineal Project Card */}
+            <Link to="/proyecto/regresionLineal" className="group block bg-white dark:bg-gray-900 rounded-3xl shadow-md overflow-hidden hover:shadow-2xl dark:hover:shadow-[0_10px_40px_-5px_rgba(0,0,0,0.7)] transition-all duration-300 border border-gray-100 dark:border-gray-800 transform hover:-translate-y-2">
+              <div className="h-56 overflow-hidden relative">
+                <div className="absolute inset-0 bg-indigo-900 bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-500 z-10 flex items-center justify-center">
+                    <span className="text-white font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform translate-y-4 group-hover:translate-y-0">Ver Proyecto completo</span>
+                </div>
+                <img src="/logo-regresion.svg" alt="Simulador de Regresión Lineal" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out dark:opacity-80" />
+              </div>
+              <div className="p-8">
+                <div className="flex justify-between items-center mb-4">
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">Regresión Lineal</h3>
+                </div>
+                <div className="flex flex-wrap gap-2 mb-4">
+                    <span className="bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 text-xs px-3 py-1.5 rounded-md font-bold uppercase tracking-wide">Machine Learning</span>
+                    <span className="bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 text-xs px-3 py-1.5 rounded-md font-bold uppercase tracking-wide">React</span>
+                    <span className="bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-xs px-3 py-1.5 rounded-md font-bold uppercase tracking-wide">IA</span>
+                </div>
+                <p className="text-gray-600 dark:text-gray-400 text-base leading-relaxed line-clamp-3">
+                  Simulador educativo que visualiza paso a paso el Descenso de Gradiente, con teoría interactiva, miles de datos y un asistente de IA integrado.
+                </p>
+              </div>
+            </Link>
+
           </div>
         </div>
       </section>
