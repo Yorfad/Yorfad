@@ -1,7 +1,46 @@
+import { useState, type FormEvent } from 'react';
 import { Link } from 'react-router-dom';
 import { FaHtml5, FaCss3Alt, FaJs, FaSass, FaBootstrap, FaGithub, FaDatabase, FaJava, FaPython } from 'react-icons/fa';
 
+// Clave pública de Web3Forms (está pensada para ir en el frontend)
+const WEB3FORMS_KEY = 'dfbe7198-6daa-4c51-bbb1-9efede3da2d0';
+
+type FormStatus = 'idle' | 'sending' | 'success' | 'error';
+
 export const Home = () => {
+  const [formStatus, setFormStatus] = useState<FormStatus>('idle');
+
+  const handleContactSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    // Campo trampa para bots: si viene marcado, se ignora el envío
+    if (data.get('botcheck')) return;
+
+    setFormStatus('sending');
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject: `Nuevo mensaje del portafolio de ${data.get('name')}`,
+          from_name: 'Portafolio Yair Morales',
+          name: data.get('name'),
+          email: data.get('email'),
+          message: data.get('message'),
+        }),
+      });
+      const result = await response.json();
+      if (!result.success) throw new Error(result.message);
+      setFormStatus('success');
+      form.reset();
+    } catch {
+      setFormStatus('error');
+    }
+  };
+
   return (
     <div className="w-full animate-fade-in transition-colors duration-300">
       {/* Hero Section */}
@@ -231,12 +270,15 @@ export const Home = () => {
               </div>
             </div>
 
-            {/* Contact Form Mock */}
-            <form onSubmit={(e) => e.preventDefault()} className="md:col-span-3 bg-white dark:bg-gray-800 p-8 rounded-3xl border border-gray-100 dark:border-gray-700 shadow-sm space-y-6">
+            {/* Contact Form (Web3Forms) */}
+            <form onSubmit={handleContactSubmit} className="md:col-span-3 bg-white dark:bg-gray-800 p-8 rounded-3xl border border-gray-100 dark:border-gray-700 shadow-sm space-y-6">
+              <input type="checkbox" name="botcheck" className="hidden" tabIndex={-1} autoComplete="off" />
+
               <div className="space-y-2">
                 <label className="text-sm font-bold text-gray-700 dark:text-gray-300">Nombre Completo</label>
-                <input 
-                  type="text" 
+                <input
+                  type="text"
+                  name="name"
                   placeholder="Tu nombre" 
                   required
                   className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-white border border-gray-200 dark:border-gray-700 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition"
@@ -246,7 +288,8 @@ export const Home = () => {
               <div className="space-y-2">
                 <label className="text-sm font-bold text-gray-700 dark:text-gray-300">Correo Electrónico</label>
                 <input 
-                  type="email" 
+                  type="email"
+                  name="email"
                   placeholder="tu@correo.com" 
                   required
                   className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-white border border-gray-200 dark:border-gray-700 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition"
@@ -257,18 +300,31 @@ export const Home = () => {
                 <label className="text-sm font-bold text-gray-700 dark:text-gray-300">Mensaje</label>
                 <textarea 
                   rows={4}
+                  name="message"
                   placeholder="Cuéntame sobre tu proyecto..." 
                   required
                   className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-white border border-gray-200 dark:border-gray-700 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition resize-none"
                 ></textarea>
               </div>
 
-              <button 
-                type="submit" 
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-2xl transition shadow-lg shadow-blue-500/10 active:scale-[0.98]"
+              <button
+                type="submit"
+                disabled={formStatus === 'sending'}
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-2xl transition shadow-lg shadow-blue-500/10 active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                Enviar Mensaje
+                {formStatus === 'sending' ? 'Enviando...' : 'Enviar Mensaje'}
               </button>
+
+              {formStatus === 'success' && (
+                <p role="status" className="text-center font-semibold text-green-600 dark:text-green-400">
+                  ¡Mensaje enviado! Te responderé lo antes posible.
+                </p>
+              )}
+              {formStatus === 'error' && (
+                <p role="alert" className="text-center font-semibold text-red-600 dark:text-red-400">
+                  No se pudo enviar el mensaje. Inténtalo de nuevo o escríbeme a alexmej267@gmail.com.
+                </p>
+              )}
             </form>
           </div>
         </div>
