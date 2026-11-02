@@ -29,6 +29,30 @@ Una aplicación educativa interactiva para aprender Regresión Lineal Simple vis
 - **🚀 Producción**: [Visitar Simulador](https://regresion-lineal.vercel.app/)
 - **📂 Repositorio**: [Código del Simulador](https://github.com/Yorfad/RegresionLineal)
 
+### 4. RestaurApp
+Sistema de gestión para restaurantes: pedidos, cocina, dashboard y facturación electrónica FEL (Guatemala). Instalable como PWA.
+- **Tecnologías**: Monorepo, Docker, Railway / Vercel.
+- **🚀 Producción**: [Visitar RestaurApp](https://restaurante-delta-steel.vercel.app/)
+- **📂 Repositorio**: [Código de RestaurApp](https://github.com/Yorfad/saasrestaurante)
+
+### 5. Mis Finanzas
+App web lista para el teléfono para registrar ingresos y gastos por categorías.
+- **Tecnologías**: React + TypeScript, Supabase.
+- **🚀 Producción**: [Visitar Mis Finanzas](https://app-finanzas-phi-rose.vercel.app/)
+- **📂 Repositorio**: [Código de Mis Finanzas](https://github.com/Yorfad/app-finanzas)
+
+### 6. MindNote
+Aplicación de notas tipo "segundo cerebro" con almacenamiento local en el navegador.
+- **Tecnologías**: React + TypeScript, Dexie.js (IndexedDB).
+- **🚀 Producción**: [Visitar MindNote](https://notes-umber-sigma.vercel.app/)
+- **📂 Repositorio**: [Código de MindNote](https://github.com/Yorfad/notes)
+
+### 7. Child Free
+Sitio web con diseño editorial cálido y minimalista.
+- **Tecnologías**: React + TypeScript.
+- **🚀 Producción**: [Visitar Child Free](https://child-free.vercel.app/)
+- **📂 Repositorio**: [Código de Child Free](https://github.com/Yorfad/child-free)
+
 ---
 
 ## 🛠️ Tecnologías del Portafolio

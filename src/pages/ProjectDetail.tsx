@@ -25,6 +25,7 @@ export const ProjectDetail = () => {
       title: 'Simulador de Autómatas (DFA) con Grafos',
       type: 'Algoritmos y Estructura de Datos',
       description: 'Una simulación interactiva paso a paso de Autómatas Finitos Deterministas (AFD) implementada completamente en Vanilla JS. Utiliza algoritmos de recorrido de grafos interactivos, renderizados dinámicamente con Cytoscape.js para visualizar cómo los estados procesan cadenas de caracteres en tiempo real.',
+      challenge: 'Construir una simulación escalable en el entorno del navegador suele requerir librerías complejas. Manipular el DOM o grafos sin frameworks re-renderizables (como React) en este nivel presenta requerimientos manuales estrictos para evitar fugas de memoria y des-sincronizaciones de UI.',
       images: ['/logo-automatas.svg'],
       techStack: ['JavaScript (Logica DFA Orientada a Objetos)', 'Teoría de Computación', 'Cytoscape.js (Grafos)', 'SASS', 'Manejo del DOM'],
       liveUrl: 'https://yorfad.github.io/automatasProyecto.github.io/',
@@ -51,6 +52,65 @@ export const ProjectDetail = () => {
         'Sección de teoría con fórmulas renderizadas en LaTeX y casos históricos reales',
         'Simulador de gran escala que procesa miles de datos renderizados en Canvas',
         'Chatbot con IA (Gemini) integrado para resolver dudas sobre el algoritmo'
+      ]
+    },
+    'restaurante': {
+      title: 'RestaurApp',
+      type: 'SaaS para Restaurantes',
+      description: 'Sistema de gestión para restaurantes que centraliza la operación diaria: toma de pedidos, pantalla de cocina, un dashboard con la información del negocio y facturación electrónica FEL para Guatemala. Funciona como aplicación web instalable (PWA).',
+      images: ['/logo-restaurante.svg'],
+      techStack: ['Arquitectura Monorepo', 'PWA', 'Docker', 'Railway / Vercel'],
+      liveUrl: 'https://restaurante-delta-steel.vercel.app/',
+      repoUrl: 'https://github.com/Yorfad/saasrestaurante',
+      features: [
+        'Módulo de pedidos',
+        'Pantalla de cocina para preparar las órdenes',
+        'Dashboard con la información del restaurante',
+        'Facturación electrónica FEL (Guatemala)',
+        'Instalable como PWA'
+      ]
+    },
+    'appFinanzas': {
+      title: 'Mis Finanzas',
+      type: 'Aplicación Web Mobile-first',
+      description: 'Una app web simple y lista para el teléfono para registrar ingresos y gastos por categorías. Está construida con React y TypeScript, pensada para poder reutilizar la lógica en React Native, y guarda los datos en Supabase.',
+      images: ['/logo-finanzas.svg'],
+      techStack: ['React', 'TypeScript', 'Supabase', 'Vite', 'Vercel'],
+      liveUrl: 'https://app-finanzas-phi-rose.vercel.app/',
+      repoUrl: 'https://github.com/Yorfad/app-finanzas',
+      features: [
+        'Registro de ingresos y gastos',
+        'Organización de movimientos por categorías',
+        'Diseño pensado para usarse desde el teléfono',
+        'Datos persistidos en Supabase',
+        'Lógica preparada para reutilizarse en React Native'
+      ]
+    },
+    'notes': {
+      title: 'MindNote',
+      type: 'Aplicación de Notas',
+      description: 'Una aplicación de notas tipo "segundo cerebro" para capturar y organizar ideas. Guarda la información localmente en el navegador mediante IndexedDB, sin depender de un servidor.',
+      images: ['/logo-notes.svg'],
+      techStack: ['React', 'TypeScript', 'Dexie.js (IndexedDB)', 'Lucide Icons', 'Vite', 'Vercel'],
+      liveUrl: 'https://notes-umber-sigma.vercel.app/',
+      repoUrl: 'https://github.com/Yorfad/notes',
+      features: [
+        'Notas guardadas localmente con IndexedDB',
+        'Funciona sin servidor ni cuenta de usuario',
+        'Interfaz enfocada en capturar y organizar ideas'
+      ]
+    },
+    'childFree': {
+      title: 'Child Free',
+      type: 'Sitio Web Editorial',
+      description: 'Un sitio web con un diseño editorial cálido y minimalista, construido con React y TypeScript.',
+      images: ['/logo-childfree.svg'],
+      techStack: ['React', 'TypeScript', 'Vite', 'Vercel'],
+      liveUrl: 'https://child-free.vercel.app/',
+      repoUrl: 'https://github.com/Yorfad/child-free',
+      features: [
+        'Diseño editorial cálido y minimalista',
+        'Maquetación responsiva'
       ]
     }
   };
@@ -113,11 +173,15 @@ export const ProjectDetail = () => {
         <div className="grid md:grid-cols-3 gap-12">
             {/* Detalles principales */}
             <div className="md:col-span-2">
-                <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white mb-6">El Reto</h2>
-                <div className="w-12 h-1 bg-blue-600 mb-8 rounded-full"></div>
-                <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-10">
-                    {project.challenge ?? <>Construir una simulación escalable en el entorno del navegador suele requerir librerías complejas. Manipular el DOM o grafos sin frameworks re-renderizables (como React) en este nivel presenta requerimientos manuales estrictos para evitar fugas de memoria y des-sincronizaciones de UI.</>}
-                </p>
+                {project.challenge && (
+                  <>
+                    <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white mb-6">El Reto</h2>
+                    <div className="w-12 h-1 bg-blue-600 mb-8 rounded-full"></div>
+                    <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-10">
+                        {project.challenge}
+                    </p>
+                  </>
+                )}
 
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Características Destacadas</h3>
                 <ul className="space-y-4">

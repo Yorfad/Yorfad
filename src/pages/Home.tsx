@@ -7,6 +7,75 @@ const WEB3FORMS_KEY = 'dfbe7198-6daa-4c51-bbb1-9efede3da2d0';
 
 type FormStatus = 'idle' | 'sending' | 'success' | 'error';
 
+// Clases completas para que Tailwind las detecte al compilar
+const tagColors = {
+  blue: 'bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300',
+  indigo: 'bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300',
+  purple: 'bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300',
+  green: 'bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-300',
+  orange: 'bg-orange-50 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300',
+};
+
+type ProjectCard = {
+  slug: string;
+  title: string;
+  image: string;
+  tags: { label: string; color: keyof typeof tagColors }[];
+  summary: string;
+};
+
+const projects: ProjectCard[] = [
+  {
+    slug: 'automatas',
+    title: 'Simulador DFA',
+    image: '/logo-automatas.svg',
+    tags: [{ label: 'Algoritmos', color: 'purple' }, { label: 'JS POO', color: 'blue' }, { label: 'Grafos', color: 'green' }],
+    summary: 'Simulación interactiva visual con Cytoscape.js de Autómatas Finitos (DFA), implementando algoritmos de validación de lenguaje y parsing .txt.',
+  },
+  {
+    slug: 'carritoDeCompras',
+    title: 'Carrito de Compras',
+    image: '/imagenCarrito.svg',
+    tags: [{ label: 'Full-Stack', color: 'blue' }, { label: 'React', color: 'indigo' }, { label: 'PostgreSQL', color: 'green' }],
+    summary: 'Boutique orgánica interactiva con catálogo en tiempo real, autenticación de usuarios por JWT y persistencia en base de datos PostgreSQL.',
+  },
+  {
+    slug: 'regresionLineal',
+    title: 'Regresión Lineal',
+    image: '/logo-regresion.svg',
+    tags: [{ label: 'Machine Learning', color: 'purple' }, { label: 'React', color: 'indigo' }, { label: 'IA', color: 'green' }],
+    summary: 'Simulador educativo que visualiza paso a paso el Descenso de Gradiente, con teoría interactiva, miles de datos y un asistente de IA integrado.',
+  },
+  {
+    slug: 'restaurante',
+    title: 'RestaurApp',
+    image: '/logo-restaurante.svg',
+    tags: [{ label: 'SaaS', color: 'orange' }, { label: 'Full-Stack', color: 'blue' }, { label: 'PWA', color: 'green' }],
+    summary: 'Sistema de gestión para restaurantes con módulos de pedidos, cocina, dashboard y facturación electrónica FEL para Guatemala.',
+  },
+  {
+    slug: 'appFinanzas',
+    title: 'Mis Finanzas',
+    image: '/logo-finanzas.svg',
+    tags: [{ label: 'React', color: 'indigo' }, { label: 'Supabase', color: 'green' }, { label: 'Mobile-first', color: 'blue' }],
+    summary: 'App web lista para el teléfono para registrar ingresos y gastos por categorías, con datos sincronizados en Supabase.',
+  },
+  {
+    slug: 'notes',
+    title: 'MindNote',
+    image: '/logo-notes.svg',
+    tags: [{ label: 'React', color: 'indigo' }, { label: 'IndexedDB', color: 'purple' }, { label: 'Offline', color: 'green' }],
+    summary: 'Aplicación de notas tipo "segundo cerebro" que guarda la información localmente en el navegador con IndexedDB.',
+  },
+  {
+    slug: 'childFree',
+    title: 'Child Free',
+    image: '/logo-childfree.svg',
+    tags: [{ label: 'React', color: 'indigo' }, { label: 'Diseño Editorial', color: 'orange' }],
+    summary: 'Sitio web con un diseño editorial cálido y minimalista, construido con React y TypeScript.',
+  },
+];
+
 export const Home = () => {
   const [formStatus, setFormStatus] = useState<FormStatus>('idle');
 
@@ -156,74 +225,29 @@ export const Home = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
             
-            {/* Automatas Project Card */}
-            <Link to="/proyecto/automatas" className="group block bg-white dark:bg-gray-900 rounded-3xl shadow-md overflow-hidden hover:shadow-2xl dark:hover:shadow-[0_10px_40px_-5px_rgba(0,0,0,0.7)] transition-all duration-300 border border-gray-100 dark:border-gray-800 transform hover:-translate-y-2">
-              <div className="h-56 overflow-hidden relative bg-blue-50 dark:bg-blue-950 flex items-center justify-center">
-                <div className="absolute inset-0 bg-indigo-900 bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-500 z-10 flex items-center justify-center">
-                    <span className="text-white font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform translate-y-4 group-hover:translate-y-0">Ver Proyecto completo</span>
+            {projects.map((project) => (
+              <Link key={project.slug} to={`/proyecto/${project.slug}`} className="group block bg-white dark:bg-gray-900 rounded-3xl shadow-md overflow-hidden hover:shadow-2xl dark:hover:shadow-[0_10px_40px_-5px_rgba(0,0,0,0.7)] transition-all duration-300 border border-gray-100 dark:border-gray-800 transform hover:-translate-y-2">
+                <div className="h-56 overflow-hidden relative">
+                  <div className="absolute inset-0 bg-indigo-900 bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-500 z-10 flex items-center justify-center">
+                      <span className="text-white font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform translate-y-4 group-hover:translate-y-0">Ver Proyecto completo</span>
+                  </div>
+                  <img src={project.image} alt={project.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out dark:opacity-80" />
                 </div>
-                <img src="/logo-automatas.svg" alt="Simulador Automatas" className="w-48 h-48 object-contain group-hover:scale-110 transition-transform duration-700 ease-in-out dark:brightness-110" />
-              </div>
-              <div className="p-8">
-                <div className="flex justify-between items-center mb-4">
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">Simulador DFA</h3>
+                <div className="p-8">
+                  <div className="flex justify-between items-center mb-4">
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{project.title}</h3>
+                  </div>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tags.map((tag) => (
+                      <span key={tag.label} className={`${tagColors[tag.color]} text-xs px-3 py-1.5 rounded-md font-bold uppercase tracking-wide`}>{tag.label}</span>
+                    ))}
+                  </div>
+                  <p className="text-gray-600 dark:text-gray-400 text-base leading-relaxed line-clamp-3">
+                    {project.summary}
+                  </p>
                 </div>
-                <div className="flex flex-wrap gap-2 mb-4">
-                    <span className="bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 text-xs px-3 py-1.5 rounded-md font-bold uppercase tracking-wide">Algoritmos</span>
-                    <span className="bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs px-3 py-1.5 rounded-md font-bold uppercase tracking-wide">JS POO</span>
-                    <span className="bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-xs px-3 py-1.5 rounded-md font-bold uppercase tracking-wide">Grafos</span>
-                </div>
-                <p className="text-gray-600 dark:text-gray-400 text-base leading-relaxed line-clamp-3">
-                  Simulación interactiva visual con Cytoscape.js de Autómatas Finitos (DFA), implementando algoritmos de validación de lenguaje y parsing .txt.
-                </p>
-              </div>
-            </Link>
-
-            {/* Carrito Project Card */}
-            <Link to="/proyecto/carritoDeCompras" className="group block bg-white dark:bg-gray-900 rounded-3xl shadow-md overflow-hidden hover:shadow-2xl dark:hover:shadow-[0_10px_40px_-5px_rgba(0,0,0,0.7)] transition-all duration-300 border border-gray-100 dark:border-gray-800 transform hover:-translate-y-2">
-              <div className="h-56 overflow-hidden relative">
-                <div className="absolute inset-0 bg-blue-900 bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-500 z-10 flex items-center justify-center">
-                    <span className="text-white font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform translate-y-4 group-hover:translate-y-0">Ver Proyecto completo</span>
-                </div>
-                <img src="/imagenCarrito.svg" alt="Carrito de Compras" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out dark:opacity-80" />
-              </div>
-              <div className="p-8">
-                <div className="flex justify-between items-center mb-4">
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">Carrito de Compras</h3>
-                </div>
-                <div className="flex flex-wrap gap-2 mb-4">
-                    <span className="bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs px-3 py-1.5 rounded-md font-bold uppercase tracking-wide">Full-Stack</span>
-                    <span className="bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 text-xs px-3 py-1.5 rounded-md font-bold uppercase tracking-wide">React</span>
-                    <span className="bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-xs px-3 py-1.5 rounded-md font-bold uppercase tracking-wide">PostgreSQL</span>
-                </div>
-                <p className="text-gray-600 dark:text-gray-400 text-base leading-relaxed line-clamp-3">
-                  Boutique orgánica interactiva con catálogo en tiempo real, autenticación de usuarios por JWT y persistencia en base de datos PostgreSQL.
-                </p>
-              </div>
-            </Link>
-
-            {/* Regresion Lineal Project Card */}
-            <Link to="/proyecto/regresionLineal" className="group block bg-white dark:bg-gray-900 rounded-3xl shadow-md overflow-hidden hover:shadow-2xl dark:hover:shadow-[0_10px_40px_-5px_rgba(0,0,0,0.7)] transition-all duration-300 border border-gray-100 dark:border-gray-800 transform hover:-translate-y-2">
-              <div className="h-56 overflow-hidden relative">
-                <div className="absolute inset-0 bg-indigo-900 bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-500 z-10 flex items-center justify-center">
-                    <span className="text-white font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform translate-y-4 group-hover:translate-y-0">Ver Proyecto completo</span>
-                </div>
-                <img src="/logo-regresion.svg" alt="Simulador de Regresión Lineal" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out dark:opacity-80" />
-              </div>
-              <div className="p-8">
-                <div className="flex justify-between items-center mb-4">
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">Regresión Lineal</h3>
-                </div>
-                <div className="flex flex-wrap gap-2 mb-4">
-                    <span className="bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 text-xs px-3 py-1.5 rounded-md font-bold uppercase tracking-wide">Machine Learning</span>
-                    <span className="bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 text-xs px-3 py-1.5 rounded-md font-bold uppercase tracking-wide">React</span>
-                    <span className="bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-xs px-3 py-1.5 rounded-md font-bold uppercase tracking-wide">IA</span>
-                </div>
-                <p className="text-gray-600 dark:text-gray-400 text-base leading-relaxed line-clamp-3">
-                  Simulador educativo que visualiza paso a paso el Descenso de Gradiente, con teoría interactiva, miles de datos y un asistente de IA integrado.
-                </p>
-              </div>
-            </Link>
+              </Link>
+            ))}
 
           </div>
         </div>
